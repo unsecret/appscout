@@ -13,6 +13,13 @@
         android:layout_height="60dp"
         />
 
+    <ImageView
+        android:id="@+id/ok"
+        android:layout_alignBottom="@id/appImage"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        />
+
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"

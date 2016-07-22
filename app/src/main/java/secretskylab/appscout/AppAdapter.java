@@ -39,6 +39,7 @@ public class AppAdapter extends ArrayAdapter<App> {
             viewHolder.appName = (TextView) convertView.findViewById(R.id.appName);
             viewHolder.appDescription = (TextView) convertView.findViewById(R.id.appDescription);
             viewHolder.appImage = (ImageView) convertView.findViewById(R.id.appImage);
+            viewHolder.ok = (ImageView) convertView.findViewById(R.id.ok);
             convertView.setTag(viewHolder);
         }
 
@@ -49,6 +50,17 @@ public class AppAdapter extends ArrayAdapter<App> {
         viewHolder.appName.setText(app.getName());
         viewHolder.appDescription.setText(app.getDescription());
         viewHolder.appImage.setImageResource(app.getResourse());
+        viewHolder.ok.setImageResource(R.drawable.ok);
+        if (app.isAppInstalled())
+        {
+            viewHolder.ok.setVisibility(ImageView.VISIBLE);
+            viewHolder.ok.setImageResource(R.drawable.ok);
+        }
+        else
+        {
+            viewHolder.ok.setImageResource(R.drawable.cart);
+        }
+
 
         return convertView;
     }
@@ -57,5 +69,6 @@ public class AppAdapter extends ArrayAdapter<App> {
         public TextView appName;
         public TextView appDescription;
         public ImageView appImage;
+        public ImageView ok;
     }
 }
